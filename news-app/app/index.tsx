@@ -9,7 +9,7 @@ export default function Index() {
       <Text className="text-5xl text-primary font-bold">NewsCap</Text>
 
       <Link href="./onboarding">Onboarding</Link>
-      <Link href="./news/article">CNN</Link>
+      <Link href="./news/ article">CNN</Link>
 
     </View>
 
