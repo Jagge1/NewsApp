@@ -9,68 +9,79 @@ export default function Signup() {
           w-60
           text-center
           font-gill
-          font-bold
-          text-3xl
+          font-medium
+          text-4xl
           mt-10
-          bg-blue-600
-          text-white
           p-3
           rounded
           mb-10
         "
       >
-        NewsCap
+        Sign Up
       </Text>
 
-      <Text className="mb-2">Email</Text>
+
+      <Text className="mb-2 text-gray-500">First Name</Text>
       <TextInput 
         placeholder="Name"
         className="
           border
           border-[#ccc]
           p-2.5
-          rounded
+          rounded-xl
           mb-4
         "
       />
 
-      <Text className="mb-2">Name</Text>
+      <Text className="mb-2 text-gray-500">Last Name</Text>
       <TextInput 
         placeholder="Name"
         className="
           border
           border-[#ccc]
           p-2.5
-          rounded
+          rounded-xl
           mb-4
         "
       />
 
-      <Text className="mb-2">Create username</Text>
+      <Text className="mb-2 text-gray-500">Email</Text>
       <TextInput 
         placeholder="Name"
         className="
           border
           border-[#ccc]
           p-2.5
-          rounded
+          rounded-xl
           mb-4
         "
       />
 
-      <Text className="mb-2">Password</Text>
+      <Text className="mb-2 text-gray-500">Password</Text>
       <TextInput 
         placeholder="Name"
         className="
           border
           border-[#ccc]
           p-2.5
-          rounded
+          rounded-xl
           mb-4
         "
 
       />
-      <Pressable className="bg-blue-600 p-3 rounded mt-4">
+      <Text className="mb-2 text-gray-500">Confirm Password</Text>
+      <TextInput 
+        placeholder="Name"
+        className="
+          border
+          border-[#ccc]
+          p-2.5
+          rounded-xl
+          mb-4
+        "
+
+      />
+      <Pressable className="bg-blue-600 p-3 rounded mt-4 w-40 self-center">
         <Text className="text-white text-center font-semibold">Create user</Text>
       </Pressable>
 
