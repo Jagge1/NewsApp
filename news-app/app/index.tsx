@@ -1,11 +1,11 @@
 import { Link } from "expo-router";
 import { Text, View } from "react-native";
-import Signup from "./screens/Signup";
+import Welcome from "./screens/Welcome";
 
 export default function Index() {
   return (
     <View>
-      <Signup></Signup>
+      <Welcome></Welcome>
     </View>
 
     
