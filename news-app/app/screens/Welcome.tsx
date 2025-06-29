@@ -15,11 +15,11 @@ export default function Welcome() {
           Welcome to
         </Text>
 
-        <Text className="text-3xl self-center">
+        <Text className="text-3xl self-center italic font-semibold">
           NewsCap
         </Text>
 
-      <Pressable className="bg-blue-600 p-3 rounded-3xl mt-4 w-40 self-center">
+      <Pressable className="bg-blue-600 p-3 rounded-3xl mt-4 w-40 self-center align-middle">
         <Text className="text-white text-center font-semibold">Get started </Text>
       </Pressable>
 
