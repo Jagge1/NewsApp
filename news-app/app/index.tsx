@@ -1,13 +1,17 @@
 import { Link } from "expo-router";
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import Welcome from "./screens/Welcome";
 
 export default function Index() {
   return (
-    <View>
+    <View style={styles.appContainer}>
       <Welcome></Welcome>
-    </View>
-
-    
+    </View>  
   );
 }
+
+const styles = StyleSheet.create({
+  appContainer: {
+    flex: 1,
+  },
+});
