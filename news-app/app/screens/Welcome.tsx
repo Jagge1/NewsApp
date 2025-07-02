@@ -1,15 +1,16 @@
-import { View, Text, TextInput, Pressable, StyleSheet } from "react-native";
+import { View, Text, Button, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useNavigation } from "@react-navigation/native";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "#1E88E5",
   },
 
   text: {
     fontFamily: "Gill Sans",
-    color: "#7F7F7F",
+    color: "white",
     fontSize: 30
   },
 
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
     fontStyle: "italic",
     fontWeight: "600",
     fontFamily: "Gill Sans",
-    color: "#1E88E5",
+    color: "white",
     fontSize: 80,
   },
 
@@ -26,11 +27,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 200,
+
   },
 
   getStartedBtn: {
     borderWidth: 2,
-    borderColor: "#7F7F7F",
+    borderColor: "white",
     padding: 7,
     borderRadius: 10,
     marginTop:10
@@ -38,11 +40,13 @@ const styles = StyleSheet.create({
 })
 
 export default function Welcome() {
+
+  const navigation = useNavigation()
+
   return(
 
-
-
-    <SafeAreaView style={styles.container}>
+  <View style={styles.container}>
+    <SafeAreaView style={{flex: 1}}>
 
       <View style={styles.contentContainer}>
 
@@ -54,16 +58,15 @@ export default function Welcome() {
           NewsCap
         </Text>
 
-      <Pressable style={styles.getStartedBtn}>
-        <Text style={styles.text}>
-          Get started   
-        </Text>
-      </Pressable>
+      <Button 
+        title="Get started" 
+        color="white"
+      />
 
       </View>
 
-
-      
     </SafeAreaView>
+  </View>
+  
   )
 }
