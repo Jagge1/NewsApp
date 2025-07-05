@@ -1,5 +1,5 @@
 import { router } from "expo-router";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { View, Text, Button, StyleSheet, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const styles = StyleSheet.create({
@@ -35,15 +35,21 @@ const styles = StyleSheet.create({
     borderColor: "white",
     padding: 7,
     borderRadius: 10,
-    marginTop:10
+    marginTop:10,
+    backgroundColor: "white"
+  },
+
+  btnText: {
+    fontFamily: "Gill Sans",
+    color: "#1E88E5",
+    fontSize: 20,
   }
 })
 
 export default function Index() {
   return(
 
-  <View style={styles.container}>
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={styles.container}>
 
       <View style={styles.contentContainer}>
 
@@ -55,16 +61,15 @@ export default function Index() {
           NewsCap
         </Text>
 
-      <Button 
-        title="Get started" 
-        color="white"
-        onPress={() => router.push("/screens/HomeScreen")}
-        />
+      <TouchableOpacity onPress={() => router.push("/screens/HomeScreen")} style={styles.getStartedBtn}>
+        
+        <Text style={styles.btnText}>Get started</Text>
+
+      </TouchableOpacity>
 
       </View>
 
     </SafeAreaView>
-  </View>
   
   )
 }
