@@ -1,24 +1,30 @@
 import 'dotenv/config'
+import express from 'express'
+import cors from 'cors'
 
-export async function getNews() {
+const app = express()
 
+app.use(cors())
+app.use(express())
+
+const PORT = process.env.PORT || 3000
+const API_KEY = process.env.API_KEY;
+
+app.get('/api/news', async (req, res) => {
   try {
-    const apiKey = process.env.API_KEY
-    const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`
-    const response = await fetch(url);
-
-    if (!( response).ok) {
-        throw new Error('Http rror')
-      }
-
-      const data = await response.json()
-      data.articles
-      console.log(data)
-
+    const response = await fetch(`https://newsapi.org/v2/top-headlines?country=se&apiKey=${API_KEY}`)
+    if (!response.ok) {
+      throw new Error(`Mama mia something went wrong ${response.status}`)
+    }
+    const data = await response.json()
+    res.json(data.articles)    
   } catch (error) {
-    console.error('Something whent wrong')
-    throw error;
+    console.error('Server error: ', error)
+    res.status(500).json({error: 'Could not fetch news'})
+    
   }
-}
+})
 
-export default { getNews }
+app.listen(PORT, ()=> { console.log(`Server running on ${PORT}`)})
+
+export default app;
